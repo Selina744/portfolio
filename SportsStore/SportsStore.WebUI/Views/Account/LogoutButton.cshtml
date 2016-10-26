@@ -1,0 +1,11 @@
+﻿@model SportsStore.Domain.Entities.User
+
+@if (Model != null)
+{
+    <h3>Welcome, @Model.UserName !</h3>
+    @Html.ActionLink("Log Out", "Logout", "Account", null, new { @class = "btn btn-primary" })
+}
+else
+{
+    @Html.ActionLink("Log In", "Login", "Account", new { returnUrl = @Request.Url.AbsoluteUri }, new { @class = "btn btn-primary" })
+}
